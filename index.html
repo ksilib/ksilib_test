@@ -6,25 +6,25 @@
 </head>
 
 <body>
-<div class="navbar">
-  <img src="img/logo_demo.png" width="51" height="51" style="float:left">
+<div class="navbar" height="51">
+  <img src="img/logo_demo.png" width="51" height="51" style="float:left;border: 0px;"></a>
   <div class="subnav">
-    <button class="subnavbtn">歌手 <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn">歌手</button>
     <div class="subnav-content">
-      <a href="#male_solo">男歌手</a>
-      <a href="#female_solo">女歌手</a>
+      <a href="malesolo.html">男歌手</a>
+      <a href="femalesolo.html">女歌手</a>
     </div>
   </div>
   <div class="subnav">
-    <button class="subnavbtn">團體 <i class="fa fa-caret-down"></i></button>
+    <button class="subnavbtn">團體</button>
     <div class="subnav-content">
       <a href="#male_group">男團</a>
       <a href="#female_group">女團</a>
     </div>
   </div>
-  <a href="#bd">壽星</a>
-  <a href="#albums">專輯</a>
-  <a href="#login" style="float:right">登入</a>
+  <a href="bd.html">壽星</a>
+  <a href="album.html">專輯</a>
+  <a href="login.html" style="float:right">登入</a>
   <img src="img/member.png" height="51" style="float:right">
 </div>
 <hr>
@@ -89,46 +89,17 @@
   <span class="dot" onclick="currentSlide(10)"></span> 
 </div>
 <br>
-<script>
-	var slideIndex = 1;
-	showSlides(slideIndex);
-	
-	// Next/previous controls
-	function plusSlides(n) {
-	  showSlides(slideIndex += n);
-	}
-	
-	// Thumbnail image controls
-	function currentSlide(n) {
-	  showSlides(slideIndex = n);
-	}
-	
-	function showSlides(n) {
-	  var i;
-	  var slides = document.getElementsByClassName("mySlides");
-	  var dots = document.getElementsByClassName("dot");
-	  if (n > slides.length) {slideIndex = 1}
-	  if (n < 1) {slideIndex = slides.length}
-	  for (i = 0; i < slides.length; i++) {
-		  slides[i].style.display = "none";
-	  }
-	  for (i = 0; i < dots.length; i++) {
-		  dots[i].className = dots[i].className.replace(" active", "");
-	  }
-	  slides[slideIndex-1].style.display = "block";
-	  dots[slideIndex-1].className += " active";
-	}
-</script>
-<div class="news_title" style="text-align:center;background-color: #333;color: #eee;">最新消息</div>
+<script src="style/slide.js"></script>
+<div class="news_title">最新消息</div>
 <div class="news">
 	1
 	2
 	3
-	4
+	4....
 </div>
-<div class="this_month_bd" style="text-align:center;background-color: #333;color: #eee;">當月壽星</div>
+<div class="this_month_bd">當月壽星</div>
 <div style="text-align:center">
-	<table style="width:100%">
+	<table style="width:80%">
 		<tr>
 			<td>所屬團體<td>藝名<td>生日
 		</tr>
