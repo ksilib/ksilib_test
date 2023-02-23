@@ -116,3 +116,11 @@
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
+  .introsuction {
+    float: left;
+  }
+  .sidebar_right {
+    background-color: aquamarine;
+    width: fit-content;
+    float: right;
+  }

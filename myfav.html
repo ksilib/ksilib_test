@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>首頁</title>
+  <link href="style/test.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<div id="HEADER">
+    <img src="img/logo_demo.png" width="51" height="51" style="float:left;border: 0px;"></a>
+  <div class="subnav">
+    <button class="subnavbtn">歌手</button>
+    <div class="subnav-content">
+      <a href="malesolo.html">男歌手</a>
+      <a href="femalesolo.html">女歌手</a>
+    </div>
+  </div>
+  <div class="subnav">
+    <button class="subnavbtn">團體</button>
+    <div class="subnav-content">
+      <a href="#male_group">男團</a>
+      <a href="#female_group">女團</a>
+    </div>
+  </div>
+  <a href="bd.html">壽星</a>
+  <a href="album.html">專輯</a>
+  <a href="login.html" style="float:right">登出</a>
+  <img src="img/member.png" height="51" style="float:right ;background-color: #5a8dca;">
+</div>
+<hr>
+<p>團體</p>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<hr>
+<p>藝人</p>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<button class="button" onclick="openForm()">&#x271A;</button>
+<div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h3>請選擇喜歡的團體</h3>
+      <button class="button">a</button>
+      <button class="button">b</button>
+      <button class="button">c</button>
+      <button class="button">d</button>
+      <button class="button">f</button>
+      <button class="button">e</button>
+      <button class="button">g</button>
+      
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+    
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+<div id="FOOTER">
+</div>
+</body>
+</html>
