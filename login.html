@@ -28,25 +28,25 @@
   <img src="img/member.png" height="51" style="float:right">
 </div>
 <hr>
-<form action="action_page.php" method="post">
-
-  <div class="container">
-    <label for="uname"><b>Email</b></label>
-    <input type="text" placeholder="Email" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Password" name="psw" required>
-
-    <button type="submit">登入</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">沒有帳號? <a href="signup.html">註冊</a></span>
-  </div>
-</form>
+<div class="container">
+	<div class="card">
+		<form class="card-form">
+      <h3 style="text-align: center;">登入</h3>
+			<div class="input">
+				<input type="text" class="input-field" required/>
+				<label class="input-label">Email</label>
+			</div>
+			<div class="input">
+				<input type="password" class="input-field" required/>
+				<label class="input-label">Password</label>
+			</div>
+			<div class="action">
+				<button class="action-button">登入</button>
+        <hr>
+        <p style="text-align: right;">沒有帳號?<a href="signup.html">註冊</a></p>
+			</div>
+		</form>
+	</div>
+</div>
 </body>
 </html>

@@ -6,121 +6,130 @@
 </head>
 
 <body>
-<div class="navbar" height="51">
-  <img src="img/logo_demo.png" width="51" height="51" style="float:left;border: 0px;"></a>
-  <div class="subnav">
-    <button class="subnavbtn">歌手</button>
-    <div class="subnav-content">
-      <a href="malesolo.html">男歌手</a>
-      <a href="femalesolo.html">女歌手</a>
+<!--選單-->
+<header>
+  <img class="logo" src="img/logo.png" alt="logo">
+  <nav>
+    <ul class="nav_links">
+      <li>歌手
+        <div class="subnav">
+          <ul>
+            <li><a href="malesolo.html">男歌手</a></li>
+            <li><a href="femalesolo.html">女歌手</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="">團體</a>
+        <div class="subnav">
+          <ul>
+            <li><a href="">男團</a></li>
+            <li><a href="">女團</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="bd.html">壽星</a></li>
+      <li><a href="album.html">專輯</a></li>
+    </ul>
+  </nav>
+  <a class="login" href="login.html"><button>登入</button></a>
+</header>
+<!--照片輪播-->
+<div class="img-slider">
+  <div class="slide">
+    <img src="img/aespa.jpg">
+    <div class="info">
+      <p>aespa</p>
+      <p>cr:</p>
     </div>
   </div>
-  <div class="subnav">
-    <button class="subnavbtn">團體</button>
-    <div class="subnav-content">
-      <a href="#male_group">男團</a>
-      <a href="#female_group">女團</a>
+  <div class="slide">
+    <img src="img/blackpink.jpg">
+    <div class="info">
+      <p>blackpink</p>
+      <p>cr:</p>
     </div>
   </div>
-  <a href="bd.html">壽星</a>
-  <a href="album.html">專輯</a>
-  <a href="login.html" style="float:right">登入</a>
-  <img src="img/member.png" height="51" style="float:right">
+  <div class="slide">
+    <img src="img/itzy.jpg">
+    <div class="info">
+      <p>itzy</p>
+      <p>cr:</p>
+    </div>
+  </div>
+  <div class="slide">
+    <img src="img/ive.jpg">
+    <div class="info">
+      <p>ive</p>
+      <p>cr:</p>
+    </div>
+  </div>
+  <div class="slide">
+    <img src="img/girls_generation.jpg">
+    <div class="info">
+      <p>girls_generation</p>
+      <p>cr:</p>
+    </div>
+  </div>
+  <div class="navigation">
+    <div class="btn active"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+    <div class="btn"></div>
+  </div>
 </div>
-<hr>
-<!-- Slideshow container -->
-<div class="slideshow-container">
-  <!-- Full-width images with number and caption text -->
-  <div class="mySlides fade">
-    <img src="img/aespa.jpg" style="width:100%">
-    <div class="text">aespa</div>
-    <div class="source">Twitter:@aespa_official</div>
-  </div>
-  <div class="mySlides fade">
-    <img src="img/bts.jpg" style="width:100%">
-    <div class="text">bts</div>
-    <div class="source">Twitter:@bts_bighit</div>
-  </div>
-  <div class="mySlides fade">
-    <img src="img/blackpink.jpg" style="width:100%">
-    <div class="text">blackpink</div>
-    <div class="source">Twitter:@BLACKPINK</div>
-  </div>
-  <div class="mySlides fade">
-    <img src="img/monsta_x.jpg" style="width:100%">
-    <div class="text">monsta x</div>
-    <div class="source">Twitter:@OfficialMonstaX</div>
-  </div>
-  <div class="mySlides fade">
-    <img src="img/ive.jpg" style="width:100%">
-    <div class="text">ive</div>
-    <div class="source">Twitter:@IVEstarship</div>
-  </div>
-  <div class="mySlides fade">
-    <img src="img/Stray_Kids.jpg" style="width:100%">
-    <div class="text">Stray Kids</div>
-    <div class="source">Twitter:@Stray_Kids</div>
-  </div>
-  <div class="mySlides fade">
-    <img src="img/itzy.jpg" style="width:100%">
-    <div class="text">itzy</div>
-    <div class="source">Twitter:@ITZYofficial</div>
-  </div>
-  <div class="mySlides fade">
-    <img src="img/super_junior.jpg" style="width:100%">
-    <div class="text">super junior</div>
-    <div class="source">Twitter:@SJofficial</div>
-  </div>
-  <div class="mySlides fade">
-    <img src="img/girls_generation.jpg" style="width:100%">
-    <div class="text">girls_generation</div>
-    <div class="source">Twitter:@GirlsGeneration</div>
-  </div>
-  <div class="mySlides fade">
-    <img src="img/seventeen.jpg" style="width:100%">
-    <div class="text">seventeen</div>
-    <div class="source">Twitter:@pledis_17</div>
-  </div>
-  <!-- Next and previous buttons -->
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-</div>
+<script type="text/javascript">
+  var slides = document.querySelectorAll('.slide');
+  var btns = document.querySelectorAll('.btn');
+  let currentSlide = 1;
+
+  var manualNav = function(manual){
+    slides.forEach((slide) => {
+      slide.classList.remove('active');
+
+      btns.forEach((btn) => {
+        btn.classList.remove('active');
+      });
+    });
+
+    slides[manual].classList.add('active');
+    btns[manual].classList.add('active');
+  }
+
+  btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      manualNav(i);
+      currentSlide = i;
+    });
+  });
+
+  var repeat = function(activeClass){
+    let active = document.getElementsByClassName('active');
+    let i = 1;
+
+    var repeater = () => {
+      setTimeout(function(){
+        [...active].forEach((activeSlide) => {
+          activeSlide.classList.remove('active');
+        });
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+
+        if(slides.length == i){
+          i = 1;
+        }
+        if(i >= slides.length){
+          return;
+        }
+        repeater();
+      }, 10000);
+    }
+    repeater();
+  }
+  repeat();
+</script>
 <br>
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span> 
-  <span class="dot" onclick="currentSlide(5)"></span> 
-  <span class="dot" onclick="currentSlide(6)"></span>
-  <span class="dot" onclick="currentSlide(7)"></span> 
-  <span class="dot" onclick="currentSlide(8)"></span> 
-  <span class="dot" onclick="currentSlide(9)"></span>
-  <span class="dot" onclick="currentSlide(10)"></span> 
-</div>
-<br>
-<script src="style/slide.js"></script>
-<div class="news_title">最新消息</div>
-<div class="news">
-	1
-	2
-	3
-	4....
-</div>
-<p class="title">當月壽星</p>
-<div class="this_month_bd"style="text-align:center">
-	<table style="width:80%">
-		<tr>
-			<td>所屬團體<td>藝名<td>生日
-		</tr>
-		<tr>
-			<td>Twice<td>Jihyo<td>1997.02.01
-		</tr>
-		<tr>
-			<td>Boyfriend<td>Jeongmin<td>1994.02.01
-		</tr>
-	</table>
-</div>
-<div class="music_chart" style="text-align:center;background-color: #333;color: #eee;">Melon chart</div>
+
 </body>
 </html>
