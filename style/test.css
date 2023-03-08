@@ -1,155 +1,176 @@
-body {
+* {
+	box-sizing:border-box;
+	margin: 0;
+	padding: 0;
+	background-color: #707478;
+  }
+  /*選單*/
+  header {
+	height: 51px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 10%;
+	background-color: #353739;
+  }
   
-}
-#HEADER { /*選單*/
-  overflow: hidden;
-  background-color: #333;
-  margin:0 auto;
-}
-#HEADER a{
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-#HEADER .subnav {
-  float: left;
-  overflow: hidden;
-}
-#HEADER .subnav .subnavbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-}
-#HEADER a:hover, .subnav:hover .subnavbtn {
-  background-color: red;
-}
+  li, a{
+	color: #ffffff;
+	text-decoration: none;
+  }
   
-/* Style the subnav content - positioned absolute */
-#HEADER  .subnav-content {
-  display: none;
-  position: absolute;
-  left: 0;
-  background-color: red;
-  width: 100%;
-  z-index: 1;
-}
-/* Style the subnav links */
-#HEADER  .subnav-content a {
-  float: left;
-  color: white;
-  text-decoration: none;
-}
-/* Add a grey background color on hover */
-#HEADER .subnav-content a:hover {
-  background-color: #eee;
-  color: black;
-}
+  button {
+	color: #333;
+	text-decoration: none;
+  }
   
-/* When you move the mouse over the subnav container, open the subnav content */
-#HEADER .subnav:hover .subnav-content {
-  display: block;
-}
-#WRAPPER {
-  margin:0 auto;
-  /*width:880px;*/
-  padding:0 10px;
-  overflow:hidden; /* 當內部有 <div> 使用 float 的時候，父層的 <div> 高度會壞掉 */
-                     /* 使用 overflow:hidden; 是最簡單破解這個問題的方法 */
-}
- 
-#SIDE {
-  width:50%;  /*<div> 要設定寬度，才能配合 float 做水平靠左或靠右排列 */
-  float:left; /* 使用 float 讓這個 <div> 做水平靠左排列 */
-  background-color: #bbdcff;
-}
- 
-#CONTENT {
-  width:auto;  /*設定 auto 就會自動伸縮，這是 <div> 的預設值，所以可以省略不寫 */
-  /*margin-left:170px;  上面的 #SIDE <div> 寬度是 170px */
-                           /* 這個 #CONTENT 設定左間距可以避免多出來的內容文字和上面的 <div> 重疊 */
-  background-color: #bbdcff;   
-  float: right;                    
-}
- 
-#FOOTER {
-  clear:both; /* 當上方的內容使用 float 時，下方的 <div> 會產生重疊上去的問題 */
-                /* 寫 clear:both; 解除浮動就可以解決這個問題 */
-  margin:0 auto;
-  width:900px;
-  height:121px;
-}
-.button {
-  background-color: #333;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 30px;
-  cursor: pointer;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-}
+  .logo {
+	cursor: pointer;
+  }
+  
+  .member {
+	cursor: pointer;
+  }
+  
+  img {
+	width: 51px;
+  }
+  
+  .nav_links {
+	list-style: none;
+  }
+  
+  .nav_links li{
+	display: inline-block;
+	padding: 0px 20px;
+  }
+  
+  .nav_links li a{
+	transition: all 0.3s ease 0s;
+  }
+  
+  .nav_links li a:hover{
+	color: #DFC2F2;
+  }
+  
+  header button {
+	padding: 9px 25px;
+	background-color: #ffffff;
+	border: none;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: all 0.3s ease 0s;
+  }
+  
+  button:hover {
+	background-color: #DFC2F2;
+  }
+  
+  .subnav {
+	display: none;
+  }
+  
+  .nav_links li:hover .subnav{
+	display: block;
+	position: absolute;
+	background-color: #344055;
+  
+  }
+
+
+
+/* The popup form - hidden by default */
 .form-popup {
-  display: none;
-  position: fixed;
-  bottom: 0;
-  top: 15%;
-  left: 33%;
-  border: 3px solid #f1f1f1;
-  z-index: 9;
+  margin: 2rem auto;
+	display: none;
+	flex-direction: column;
+	width: 100%;
+	max-width: 425px;
+	background-color: #FFF;
+	border-radius: 10px;
+	box-shadow: 0 10px 20px 0 rgba(#999, .25);
+	padding: .75rem;
 }
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 400px;
   padding: 10px;
-  background-color: white;
 }
 
-.form-container .button {
-  background-color: #333;
-  border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 30px;
-  cursor: pointer;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+
+.form-container {
+	padding: 2rem 1rem 0;
 }
 
-/* Set a style for the submit/login button */
-.form-container .btn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 16px 20px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  margin-bottom:10px;
-  opacity: 0.8;
+.input {
+	display: flex;
+	flex-direction: column-reverse;
+	position: relative;
+	padding-top: 1.5rem;
+	margin-top: 1.5rem;
 }
 
-/* Add a red background color to the cancel button */
-.form-container .cancel {
-  background-color: red;
+.input-label {
+	color: #8597a3;
+	/*position: absolute;
+	top: 1.5rem;*/
+	transition: .25s ease;
 }
 
-/* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
-  opacity: 1;
+.input-field {
+	border: 0;
+	z-index: 1;
+	background-color: transparent;
+	border-bottom: 2px solid #eee; 
+	font: inherit;
+	font-size: 1.125rem;
+	padding: .25rem 0;
+}
+
+.input-field:focus .input-field:valid {
+  outline: 0;
+	border-bottom-color: #6658d3;
+}
+
+.input-field.input-label {
+  color: #6658d3;
+	transform: translateY(-1.5rem);
+}
+
+.action {
+	margin-top: 2rem;
+}
+
+.action-button {
+	font: inherit;
+	font-size: 1.25rem;
+	padding: 1em;
+	width: 100%;
+	font-weight: 500;
+	background-color: #6658d3;
+	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+}
+.close {
+  margin-top: 2rem;
+}
+.close button{
+	font: inherit;
+	font-size: 1.25rem;
+	padding: 1em;
+	width: 100%;
+	font-weight: 500;
+	background-color: #6658d3;
+	border-radius: 6px;
+	color: #FFF;
+	border: 0;
+}
+
+.action-button:focus {
+  outline: 0;
+}
+
+.btn-cancel:focus {
+  outline: 0;
 }
