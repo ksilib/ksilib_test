@@ -1,53 +1,48 @@
-<!DOCTYPE html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>首頁</title>
-  <link href="style/signup.css" rel="stylesheet" type="text/css">
-</head>
-
-<body>
-<div class="navbar" height="51">
-  <img src="img/logo_demo.png" width="51" height="51" style="float:left;border: 0px;"></a>
-  <div class="subnav">
-    <button class="subnavbtn">歌手</button>
-    <div class="subnav-content">
-      <a href="malesolo.html">男歌手</a>
-      <a href="femalesolo.html">女歌手</a>
-    </div>
-  </div>
-  <div class="subnav">
-    <button class="subnavbtn">團體</button>
-    <div class="subnav-content">
-      <a href="#male_group">男團</a>
-      <a href="#female_group">女團</a>
-    </div>
-  </div>
-  <a href="#bd">壽星</a>
-  <a href="#albums">專輯</a>
-  <a href="login.html" style="float:right">登入</a>
-  <img src="img/member.png" height="51" style="float:right">
-</div>
-<hr>
-<div class="container">
-	<div class="card">
-		<form class="card-form">
-      <h3 style="text-align: center;">註冊</h3>
-			<div class="input">
-				<input type="text" class="input-field" required/>
-				<label class="input-label">Email</label>
-			</div>
-			<div class="input">
-				<input type="password" class="input-field" required/>
-				<label class="input-label">Password</label>
-			</div>
-			<div class="action">
-				<button class="action-button">註冊</button>
-        <hr>
-        <p style="text-align: right;">已有帳號?<a href="login.html">登入</a></p>
-			</div>
-		</form>
-	</div>
-</div>
-
-</body>
+<?php
+  include_once 'header.php';
+?>
+<link href="../style/registration.css" rel="stylesheet" type="text/css">
+  <nav>
+    <form class="regisform" action="includes/signup.inc.php" method="post">
+      <h2>註冊</h2>
+      <label for="username">暱稱 : </label>
+      <input type="text" name="username" id = "username"> <br>
+      <label for="email">信箱 : </label>
+      <input type="text" name="email" id = "email"> <br>
+      <label for="password">密碼 : </label>
+      <input type="password" name="password" id = "password"> <br>
+      <label for="confirmpassword">確認密碼 : </label>
+      <input type="password" name="confirmpassword" id = "confirmpassword"> <br>
+      <button type="submit" name="submit">註冊</button>
+      <p>或</p>
+      <input type="button" onclick="location.href='login.php'" value="登入" id="login">
+    </form>
+    <?php
+      if (isset($_GET["error"])) {
+        if ($_GET["error"] == "emptyinput") {
+          echo "<p>Fill in all fields!</p>";
+        }
+        else if ($_GET["error"] == "invaliduid") {
+          echo "<p>Choose a proper username!</p>";
+        }
+        else if ($_GET["error"] == "invalidemail") {
+          echo "<p>Choose a proper email!</p>";
+        }
+        else if ($_GET["error"] == "passwordnotmatch") {
+          echo "<p>Passwords doesn't match!</p>";
+        }
+        else if ($_GET["error"] == "stmtfailed") {
+          echo "<p>Something went wrong, try again!</p>";
+        }
+        else if ($_GET["error"] == "usernametaken") {
+          echo "<p>Username already taken!</p>";
+        }
+        else if ($_GET["error"] == "none") {
+          echo "<p>You have sign up!</p>";
+        }
+      }
+    ?>
+</nav>
+  </body>
 </html>
+

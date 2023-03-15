@@ -1,0 +1,90 @@
+* {
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    text-transform: none;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    top: 0;left: 0;right: 0;
+    background-color: #29465A;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+header img {
+    width: 50px;
+    float: left;
+}
+
+header .logo_text {
+    font-weight: bolder;
+    font-size: 25px;
+    color: #DAE6EB;
+    float: left;
+    padding: 10px;
+}
+
+header .navbar ul {
+    list-style: none;
+}
+
+header .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+header .navbar ul li a {
+    font-size: 20px;
+    padding: 20px;
+    color: #DAE6EB;
+    display: block;
+}
+
+header .navbar ul li a:hover {
+    background-color: #DAE6EB;
+    color: #29465A;
+}
+
+header .navbar ul li ul {
+    position: absolute;
+    left: 0;
+    width: 200px;
+    display: none;
+    background-color: #29465A;
+}
+
+header .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+header .navbar ul li:hover > ul {
+    display: initial;
+}
+
+header button {
+    margin: 5px;
+    padding: 9px 25px;
+    background-color: #DAE6EB;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+header button:hover {
+    background-color: #6C9AAD;
+    color: white;
+}
+@media(max-width:916px) {
+
+    header {
+        padding: 20px;
+    }
+
+}

@@ -1,0 +1,37 @@
+body {
+    color: white;
+}
+.main {
+    width: 60%;
+    margin: 90px 0px;
+    
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0px 27px;
+}
+.profile {
+    padding: 5px 42px;
+}
+.profile p {
+    font-size: 35px;
+}
+.info p {
+    font-size: 20px;
+}
+.other {
+    position: absolute;
+    left: 70%;
+    top: 99px;
+    
+}
+
+.other input {
+    background-color: white;
+}
+
+.other i {
+    color: black;
+    background-color: white;
+}
