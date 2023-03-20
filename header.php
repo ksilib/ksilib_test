@@ -19,8 +19,8 @@
         <ul>
           <li><a href="">藝人<i class="fa-solid fa-chevron-down"></i></a>
             <ul>
-              <li><a href="">男藝人</a>
-              <li><a href="">女藝人</a>
+              <li><a href="../maleartist.php">男藝人</a>
+              <li><a href="../femaleartist.php">女藝人</a>
             </ul>
           </li>
           <li><a href="">團體<i class="fa-solid fa-chevron-down"></i></a>
