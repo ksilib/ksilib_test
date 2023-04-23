@@ -20,25 +20,32 @@
     <?php
       if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyinput") {
-          echo "<p>Fill in all fields!</p>";
+          $message = "請輸入所有資料!";
+          echo "<script>alert('$message');</script>";
         }
         else if ($_GET["error"] == "invaliduid") {
-          echo "<p>Choose a proper username!</p>";
+          $message = "暱稱無效!";
+          echo "<script>alert('$message');</script>";
         }
         else if ($_GET["error"] == "invalidemail") {
-          echo "<p>Choose a proper email!</p>";
+          $message = "請填寫正確的信箱!";
+          echo "<script>alert('$message');</script>";
         }
         else if ($_GET["error"] == "passwordnotmatch") {
-          echo "<p>Passwords doesn't match!</p>";
+          $message = "密碼不正確!";
+          echo "<script>alert('$message');</script>";
         }
         else if ($_GET["error"] == "stmtfailed") {
-          echo "<p>Something went wrong, try again!</p>";
+          $message = "再試一次!";
+          echo "<script>alert('$message');</script>";
         }
         else if ($_GET["error"] == "usernametaken") {
-          echo "<p>Username already taken!</p>";
+          $message = "暱稱重複!";
+          echo "<script>alert('$message');</script>";
         }
         else if ($_GET["error"] == "none") {
-          echo "<p>You have sign up!</p>";
+          $message = "註冊成功!";
+          echo "<script>alert('$message');</script>";
         }
       }
     ?>

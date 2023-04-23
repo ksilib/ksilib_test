@@ -4,9 +4,8 @@ body {
 }
 /*照片輪播*/
 .wrapper{
-    display: flex;
-    
     position: relative;
+    top: 10px;
   }
   .wrapper i{
     top: 50%;
@@ -37,7 +36,7 @@ body {
     right: 5px;
   }
   .wrapper .carousel{
-    margin: 10px;
+    margin-top: 78px;
     font-size: 0px;
     cursor: pointer;
     overflow: hidden;
@@ -57,9 +56,6 @@ body {
     user-select: none;
     margin-left: 14px;
   }
-  .carousel img:hover {
-    opacity: 0.5;
-  }
   
   .carousel img:first-child{
     margin-left: 0px;
@@ -76,3 +72,90 @@ body {
       width: 100%;
     }
   }
+
+table {
+    background-color: #DAE6EB;
+    margin-top: 1%;
+    text-align: center;
+    width: 60%;
+}
+table tr , td {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+table thead {
+    color: white;
+    background-color: #4B6973;
+}
+table a:link{
+    text-decoration:none;
+    color: #29465a;
+}
+table a:visited {
+    color: #29465a;
+}
+.news {
+  margin-top: 2%;
+  margin-left: 2%;
+  width: 30%;
+  background-color: #DAE6EB;
+  float: left;
+}
+.news h3{
+  text-align: center;
+}
+
+.news a:link{
+  text-decoration:none;
+  color: #29465a;
+}
+.news a:visited {
+  color: #29465a;
+}
+.chart {
+  margin-top: 2%;
+  margin-left: 3%;
+  width: 30%;
+  background-color: #DAE6EB;
+  float: left;
+}
+.chart h3{
+  text-align: center;
+}
+.chart a:link{
+  text-decoration:none;
+  color: #29465a;
+}
+.chart a:visited {
+  color: #29465a;
+}
+.bd {
+  margin-top: 2%;
+  margin-left: 3%;
+  width: 30%;
+  background-color: #DAE6EB;
+  float: left;
+}
+.bd h3{
+  text-align: center;
+}
+.bd a:link{
+  text-decoration:none;
+  color: #29465a;
+}
+.bd a:visited {
+  color: #29465a;
+}
+.bd table {
+  width: 100%;
+}
+#text {
+  color: #ffffff;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: fit-content;
+  text-align: center;
+  background-color: black;
+}

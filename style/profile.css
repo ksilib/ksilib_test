@@ -9,10 +9,11 @@ body {
 
 .wrapper {
     width: 100%;
-    margin: 0px 27px;
+    margin-top: -13%;
+    margin-left: 36px;
 }
 .profile {
-    padding: 5px 42px;
+    padding: 15px 42px;
 }
 .profile p {
     font-size: 35px;
@@ -34,4 +35,16 @@ body {
 .other i {
     color: black;
     background-color: white;
+}
+.back {
+    margin-top: 8.5%;
+    margin-left: 3%;
+}
+.back a {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+.back i {
+    color: white;
 }

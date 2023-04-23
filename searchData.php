@@ -6,50 +6,30 @@
 <link href="../style/profile.css" rel="stylesheet" type="text/css">
 
 <script src="../style/script.js" defer></script>
+<div class="back">
+  <a href="maleartist.php"><i class="fa-solid fa-circle-xmark fa-2xl"></i></a>
+</div>
+
 <div class="main">
-    <!--照片輪播-->
-    <!--<div class="wrapper">
-      <i id="left" class="fa-solid fa-angle-left"></i>
-      <div class="carousel">
-        <img src="" alt="LE SSRAFIM" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-      </div>
-      <i id="right" class="fa-solid fa-angle-right"></i>
-    </div>
-    <div class="profile">
-        <p>Kihyun</p>
-        <section class="info">
-            <p>藝名&emsp;&emsp;： Kihyun</p>
-            <p>本名&emsp;&emsp;： 柳基現</p>
-            <p>羅馬拼音： Yoo Ki Hyun</p>
-            <p>生日&emsp;&emsp;： 1993年11月22日</p>
-            <p>星座&emsp;&emsp;： 天蠍座</p>
-            <p>出生地&emsp;： 韓國京畿道高陽市日山</p>
-            <p>所屬團體： MONSTA X</p>
-            <p>出道日期： 2015年5月14日</p>
-            <p>對內擔當： 主唱</p>
-            <p>所屬公司： Starship Entertainment</p>
-        </section>
-    </div>-->
     <div class="wrapper">
       <i id="left" class="fa-solid fa-angle-left"></i>
       <div class="carousel">
-        <img src="" alt="LE SSRAFIM" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
-        <img src="" alt="img" draggable="false">
+        <?php
+          $data=$_GET['data'];
+          $con=mysqli_connect('localhost','root','','imageupload');
+          if(!$con) {
+              die(mysqli_error($con));
+          }
+          $sql = "SELECT * FROM `image`";
+          $result = mysqli_query($con, $sql);
+          while($row=mysqli_fetch_assoc($result)) {
+            $rom=$row['藝名'];
+            $image=$row['照片'];
+            if ($data==$rom){
+              echo '<img src='.$image.' />';
+            }
+          }
+        ?>
       </div>
       <i id="right" class="fa-solid fa-angle-right"></i>
     </div>
@@ -57,7 +37,7 @@
         <?php
             $data=$_GET['data'];
             echo "<p>$data</p>";
-            $sql = "SELECT * FROM maleinfo where 本名='$data'";
+            $sql = "SELECT * FROM maleinfo where 藝名='$data'";
             $result = mysqli_query($conn, $sql);
             if($result){
                 $row = mysqli_fetch_assoc($result);
@@ -68,16 +48,14 @@
                 <p>生日&emsp;&emsp;： " . $row["生日"] . "</p>
                 <p>星座&emsp;&emsp;： " . $row["星座"] . "</p>
                 <p>出生地&emsp;： " . $row["出生地"] . "</p>
-                <p>所屬團體： " . $row["團體"] . "</p>
+                <p>所屬團體： <a href='../searchm.php?data=". $row["所屬團體"] ."'>" . $row["所屬團體"] . "</a></p>
                 <p>出道日期： " . $row["出道日期"] . "</p>
                 <p>隊內擔當： " . $row["隊內擔當"] . "</p>
-                <p>所屬公司： " . $row["公司"] . "</p>
-                <p>備註： " . $row["備註"] . "</p>
+                <p>所屬公司： " . $row["所屬公司"] . "</p>
+                <p>經歷： " . $row["經歷"] . "</p>
                 </section>";
             }
-            
         ?>
-        
     </div>
     <div class="other">
         <form action="/action_page.php">

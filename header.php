@@ -25,18 +25,23 @@
           </li>
           <li><a href="">團體<i class="fa-solid fa-chevron-down"></i></a>
             <ul>
-              <li><a href="">男團</a>
-              <li><a href="">女團</a>
+              <li><a href="../malegroup.php">男團</a>
+              <li><a href="../femalegroup.php">女團</a>
             </ul>
           </li>
-          <li><a href="">壽星</a></li>
+          <li><a href="../bd.php">壽星</a></li>
           <li><a href="">專輯</a></li>
         </ul>
       </nav>
       <nav class="">
         <?php
             if (isset($_SESSION["useruid"])) {
-              echo "<a href='myfav.php'><button>我的最愛</button></a>";
+              if($_SESSION["useruid"]=="admin"){
+                echo "<a href='../admin/index.php'><button>管理</button></a>";
+              }else{
+                echo "<a href='myfav.php'><button>我的最愛</button></a>";
+              }
+              
               echo "<a href='../includes/logout.inc.php'><button>登出</button></a>";
             }
             else {

@@ -1,0 +1,23 @@
+body {
+    background-color: #6C9AAD;
+}
+form {
+    margin-left: 5%;
+}
+div {
+    display: block;
+    margin-bottom: 10px;
+  }
+label {
+    display: inline-block;
+    width: 64px;
+}
+input[type="text"] {
+    width: 300px;
+}
+textarea {
+    width: 350px;
+}
+input[type="submit"] {
+    width: 75px;
+}

@@ -16,10 +16,12 @@
     <?php
       if (isset($_GET["error"])) {
         if ($_GET["error"] == "emptyinput") {
-          echo "<p>Fill in all fields!</p>";
+          $message = "請輸入資料!";
+          echo "<script>alert('$message');</script>";
         }
         else if ($_GET["error"] == "wronglogin") {
-          echo "<p>Incorrect login infomation!</p>";
+          $message = "暱稱/信箱不正確 或 密碼不正確!";
+          echo "<script>alert('$message');</script>";
         }
         
       }
